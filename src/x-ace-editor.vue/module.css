@@ -1,0 +1,8 @@
+.root {
+    /* width: auto; */
+    height: 400px;
+}
+
+.root[disabled] {
+    cursor: not-allowed;
+}
