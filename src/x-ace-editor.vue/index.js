@@ -10,6 +10,7 @@ export default {
         theme: { type: String },
         readonly: { type: Boolean, default: false },
         disabled: { type: Boolean, default: false },
+        options: Object,
     },
     data() {
         // 就不监听了
@@ -38,6 +39,8 @@ export default {
     },
     mounted() {
         this.editor = ace.edit(this.$el);
+        if (this.options)
+            this.editor.setOptions(this.options);
 
         this.watchLang(this.lang);
         this.watchTheme(this.theme);

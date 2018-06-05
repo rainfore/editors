@@ -49,3 +49,4 @@ export default {
 | theme | String | | 设置主题 |
 | readonly | Boolean | `false` | 是否只读 |
 | disabled | Boolean | `false` | 是否禁用 |
+| options | Object |  | 配置项对象 |
