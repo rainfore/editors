@@ -47,7 +47,7 @@ export default {
                 this.editor.blur();
         },
         options(options) {
-            this.editor && this.editor.setOptions(this.options);
+            this.editor && this.editor.setOptions(options);
         },
     },
     mounted() {
