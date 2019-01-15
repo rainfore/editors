@@ -11,10 +11,7 @@ export default {
         readonly: { type: Boolean, default: false },
         disabled: { type: Boolean, default: false },
         options: Object,
-        autoFocus: {
-            type: Boolean,
-            default: false,
-        },
+        autofocus: { type: Boolean, default: false },
     },
     data() {
         // 就不监听了
@@ -40,12 +37,6 @@ export default {
         disabled(disabled) {
             this.watchDisabled(disabled);
         },
-        autoFocus(autoFocus) {
-            if (autoFocus)
-                this.focusLastLine();
-            else
-                this.editor.blur();
-        },
         options(options) {
             this.editor && this.editor.setOptions(options);
         },
@@ -55,7 +46,7 @@ export default {
         if (this.options)
             this.editor.setOptions(this.options);
 
-        if (this.autoFocus)
+        if (this.autofocus)
             this.focusLastLine();
 
         this.watchLang(this.lang);
@@ -153,7 +144,7 @@ export default {
             this.editor.gotoLine(count, session.getLine(count - 1).length);
         },
     },
-    beforeDestroy() {
+    destroyed() {
         this.editor.destroy();
     },
 };

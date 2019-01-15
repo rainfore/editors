@@ -50,4 +50,4 @@ export default {
 | readonly | Boolean | `false` | 是否只读 |
 | disabled | Boolean | `false` | 是否禁用 |
 | options | Object |  | 配置项对象 |
-| autoFocus | Boolean | `false` | 默认focus状态 |
+| autofocus | Boolean | `false` | 默认focus状态 |
