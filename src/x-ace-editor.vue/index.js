@@ -11,6 +11,10 @@ export default {
         readonly: { type: Boolean, default: false },
         disabled: { type: Boolean, default: false },
         options: Object,
+        autoFocus: {
+            type: Boolean,
+            default: false,
+        },
     },
     data() {
         // 就不监听了
@@ -36,11 +40,23 @@ export default {
         disabled(disabled) {
             this.watchDisabled(disabled);
         },
+        autoFocus(autoFocus) {
+            if (autoFocus)
+                this.focusLastLine();
+            else
+                this.editor.blur();
+        },
+        options(options) {
+            this.editor && this.editor.setOptions(this.options);
+        },
     },
     mounted() {
         this.editor = ace.edit(this.$el);
         if (this.options)
             this.editor.setOptions(this.options);
+
+        if (this.autoFocus)
+            this.focusLastLine();
 
         this.watchLang(this.lang);
         this.watchTheme(this.theme);
@@ -130,5 +146,14 @@ export default {
             }
             return true;
         },
+        focusLastLine() {
+            this.editor.focus();
+            const session = this.editor.getSession();
+            const count = session.getLength();
+            this.editor.gotoLine(count, session.getLine(count - 1).length);
+        },
+    },
+    beforeDestroy() {
+        this.editor.destroy();
     },
 };
