@@ -1,9 +1,9 @@
-import Field from 'proto-ui.vusion/src/u-field.vue';
-import ace from 'brace';
+import { MField } from 'proto-ui.vusion';
+import * as ace from 'brace';
 
-export default {
+export const XAceEditor = {
     name: 'x-ace-editor',
-    mixins: [Field],
+    mixins: [MField],
     props: {
         value: { type: String, default: '' },
         lang: { type: String, default: 'text' },
@@ -148,3 +148,5 @@ export default {
         this.editor.destroy();
     },
 };
+
+export default XAceEditor;

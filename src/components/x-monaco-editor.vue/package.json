@@ -23,8 +23,8 @@
       "editor"
     ],
     "dependencies": {
-      "monaco-editor": "^0.13.1",
-      "proto-ui.vusion": "~0.3.10"
+      "monaco-editor": "^0.17.1",
+      "proto-ui.vusion": "~0.4.6"
     },
     "peerDependencies": {
       "vue": "^2.5.0"
