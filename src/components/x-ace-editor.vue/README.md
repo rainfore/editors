@@ -14,19 +14,18 @@
 <x-ace-editor v-model="value" lang="json" theme="monokai"></x-ace-editor>
 </template>
 <script>
+import 'brace';
 import 'brace/mode/json';
 import 'brace/theme/monokai';
 
 export default {
     data() {
         return {
-            value:
-`{
-    "name": "Alice",
-    "age": 24,
-    "phone": "18612345678"
-}
-`,
+            value: {
+                "name": "Alice",
+                "age": 24,
+                "phone": "18612345678"
+            },
         };
     },
 }
