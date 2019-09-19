@@ -1,6 +1,7 @@
 {
     "extends": "vusion/all",
     "env": {
-        "browser": true
+        "browser": true,
+        "node": true
     }
 }
