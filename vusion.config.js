@@ -9,8 +9,9 @@ module.exports = {
         mode: 'history',
         base: '/editors/',
         github: 'https://github.com/vusion/editors',
-        // navbar: [
-        //     { text: '组件', to: '/components' },
-        // ],
+        components: [
+            { group: '编辑器', name: 'x-ace-editor' },
+            { group: '代码染色', name: 'x-highlight' },
+        ],
     },
 };

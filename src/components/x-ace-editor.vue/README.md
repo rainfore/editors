@@ -1,7 +1,7 @@
 # XAceEditor
 
 ## 示例
-### 基本形式
+### 基本用法
 
 ``` html
 <x-ace-editor></x-ace-editor>
@@ -21,11 +21,13 @@ import 'brace/theme/monokai';
 export default {
     data() {
         return {
-            value: {
-                "name": "Alice",
-                "age": 24,
-                "phone": "18612345678"
-            },
+            value:
+`{
+    "name": "Alice",
+    "age": 24,
+    "phone": "18612345678"
+}
+`,
         };
     },
 }
