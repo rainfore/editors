@@ -24,7 +24,6 @@ import 'highlight.js/styles/tomorrow.css';
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
 hljs.registerLanguage('javascript', javascript);
-import 'highlight.js/styles/tomorrow.css';
 
 export default {
     data() {
@@ -54,7 +53,6 @@ const flat = {};
 import hljs from 'highlight.js/lib/highlight';
 import xml from 'highlight.js/lib/languages/xml';
 hljs.registerLanguage('xml', xml);
-import 'highlight.js/styles/tomorrow.css';
 
 export default {
     data() {
