@@ -43,8 +43,9 @@ export const XAceEditor = {
     },
     mounted() {
         this.editor = ace.edit(this.$el);
-        if (this.options)
-            this.editor.setOptions(this.options);
+        const options = this.options;
+        if (options)
+            this.editor.setOptions(options);
 
         if (this.autofocus)
             this.focusLastLine();
@@ -52,8 +53,8 @@ export const XAceEditor = {
         this.watchLang(this.lang);
         this.watchTheme(this.theme);
         this.watchValue(this.value);
-        this.watchReadonly(this.readonly);
         this.watchDisabled(this.disabled);
+        this.watchReadonly(this.disabled || (options && options.readOnly) || this.readonly);
 
         // @question
         this.editor.$blockScrolling = Infinity;
